@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+  background:transparent;
+}
+
+#chat
+{
+  overflow-y: scroll;
+}
+#main_chat
+{
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+}
+
+#msg
+{
+  position: absolute;
+  bottom:20px;
+  display: inline-flex;
+  z-index: 200;
+}
+
+input:focus
+{
+  outline:0;
+}
+
+input{
+  background: transparent;
+  width:1360px;
+  border: none;
+  border-bottom: 2px solid grey;
+  padding: 12px;
+  font-size: 20px;
+  margin-right: 20px;
+  transition:0.4s;
+  margin-left: 20px;
+}
+
+input:focus
+{
+  border-bottom: 2px solid #440e62;
+  transition:0.4s;
+}
+
+.rkmd-btn {
+  cursor: pointer;
+  width:120px;
+  height:40px;
+  background: green;
+  border:2px solid green;
+  border-radius: 12px;
+  color:white;
+  font-weight: 600;
+  font-size: 17px;  padding: 0 1.5rem;
+  color: #424242;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .8px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  top:7px;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  border-radius: 5px;
+  transition: all .3s ease-out;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+}
+
+.rkmd-btn:focus
+{
+	outline:0;
+}
+
+.rkmd-btn.btn-deepPurple {
+  color: #FFF;
+  background-color: #781eaa;
+}
+.rkmd-btn.btn-deepPurple:hover {
+  background-color: #440e62;
+}
+
+.rkmd-btn i {
+  float: left;
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  line-height: inherit;
+}
+
+
+.ripple-effect {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 1;
+}
+.ripple-effect .ripple {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-transform: scale(0);
+   transform: scale(0);
+}
+
+.ripple-effect.ripple-purple .ripple {
+  background: rgba(156, 39, 176, 0.725) !important;
+}
+
+.ripple-effect .animated {
+  -webkit-animation: ripple 0.6s linear;
+          animation: ripple 0.6s linear;
+}
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}
+
+
+#chat
+{
+  background:transparent;
+  border:1px solid grey;
+  border-radius: 12px;
+  height: 570px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#chatbtndisp
+{
+  padding: 12px;
+}
+
+
+.qbtn
+{
+  --background :#ececec;
+  background: #ececec;
+  --border: 1.5px solid #440e62;
+  border:none;
+  --border-radius: 50px;
+  border-radius: 7px;
+  padding: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+  font-weight: 600;
+  transition: 0.5s;
+  margin-left: 20px;
+  width:350px;
+  margin-right: 20px;
+  ---webkit-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
+  ---moz-box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
+  --box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.75);
+}
+.qbtn:hover
+{
+  background :#440e62;
+  color:white;
+  transition: 0.5s;
+}
+.qbtn:focus
+{
+  outline: 0;
+}
+
+
+.reqmsg {
+	position: relative;
+	background: #c2c2c2;
+	border-radius: .4em;
+  float:right;
+  margin-right: 20px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  clear: all;
+  padding: 12px;
+}
+
+.reqmsg:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 9px solid transparent;
+	border-left-color: #c2c2c2;
+	border-right: 0;
+	margin-top: -9px;
+	margin-right: -9px;
+}
+
+
+.resmsg {
+	position: relative;
+	background: #860495;
+	border-radius: .4em;
+  color:white;
+  float:left;
+  font-family: 'Roboto', sans-serif;
+  --margin-left: 20px;
+  left:20px;
+  clear: all;
+  position: relative;
+  padding: 12px;
+}
+
+.resmsg:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 9px solid transparent;
+	border-right-color: #860495;
+	border-left: 0;
+	margin-top: -9px;
+	margin-left: -9px;
+}
+
+.row
+{
+  position: relative;
+  top:20px;
+  bottom: 20px;
+  height: 30px;
+  clear: both;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

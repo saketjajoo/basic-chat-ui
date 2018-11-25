@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <title> Urja | Home Energy Monitoring </title>
+    <link rel="stylesheet" href="index_style.css">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+      <script>
+        function startbasic()
+        {
+            document.getElementById('mainmsg').focus();
+        }
+      </script>
+
+      <script>
+        var id=1;
+        function sendmsg()
+        {
+          if(document.getElementById('mainmsg').value == '')
+          {
+            alert('Fill the input field');
+            document.getElementById('mainmsg').focus();
+            return;
+          }
+          var row_block_to_insert = document.createElement( 'div' );
+          row_block_to_insert.className = 'row';
+          var container_block = document.getElementById( 'chat' );
+          container_block.appendChild( row_block_to_insert );
+
+          var msg = document.getElementById('mainmsg').value;
+          var block_to_insert = document.createElement( 'div' );
+          block_to_insert.className = 'reqmsg';
+          block_to_insert.id = id;
+          block_to_insert.innerHTML = msg;
+
+          var rowcontainer_block = document.getElementById(id);
+          setTimeout(function(){container_block.appendChild(block_to_insert);}, 500);
+
+          /*window.open("http://google.com/login?cid="+ myu +"&pwd="+ myp);
+          var url = 'https://www.google.co.in';
+          window.open(url, '_blank');*/
+          id=id+1;
+          document.getElementById('mainmsg').value='';
+          document.getElementById('mainmsg').focus();
+        }
+
+        function addmsg1()
+        {
+          var row_block_to_insert = document.createElement( 'div' );
+          row_block_to_insert.className = 'row';
+          var container_block = document.getElementById( 'chat' );
+          container_block.appendChild( row_block_to_insert );
+
+          var msg = document.getElementById('b1').innerHTML;
+          var block_to_insert = document.createElement( 'div' );
+          block_to_insert.className = 'reqmsg';
+          block_to_insert.id = id;
+          block_to_insert.innerHTML = msg;
+
+          var rowcontainer_block = document.getElementById(id);
+          setTimeout(function(){container_block.appendChild(block_to_insert);}, 500);
+          /*window.open("http://google.com/login?cid="+ myu +"&pwd="+ myp);
+          var url = 'https://www.google.co.in';
+          window.open(url, '_blank');*/
+          id=id+1;
+        }
+
+        function addmsg2()
+        {
+          var row_block_to_insert = document.createElement( 'div' );
+          row_block_to_insert.className = 'row';
+          var container_block = document.getElementById( 'chat' );
+          container_block.appendChild( row_block_to_insert );
+
+          var msg = document.getElementById('b2').innerHTML;
+          var block_to_insert = document.createElement( 'div' );
+          block_to_insert.className = 'reqmsg';
+          block_to_insert.id = id;
+          block_to_insert.innerHTML = msg;
+
+          var rowcontainer_block = document.getElementById(id);
+          setTimeout(function(){container_block.appendChild(block_to_insert);}, 500);
+          /*window.open("http://google.com/login?cid="+ myu +"&pwd="+ myp);
+          var url = 'https://www.google.co.in';
+          window.open(url, '_blank');*/
+          id=id+1;
+        }
+
+        function addmsg3()
+        {
+          var row_block_to_insert = document.createElement( 'div' );
+          row_block_to_insert.className = 'row';
+          var container_block = document.getElementById( 'chat' );
+          container_block.appendChild( row_block_to_insert );
+
+          var msg = document.getElementById('b3').innerHTML;
+          var block_to_insert = document.createElement( 'div' );
+          block_to_insert.className = 'reqmsg';
+          block_to_insert.id = id;
+          block_to_insert.innerHTML = msg;
+
+          var rowcontainer_block = document.getElementById(id);
+          setTimeout(function(){container_block.appendChild(block_to_insert);}, 500);
+          /*window.open("http://google.com/login?cid="+ myu +"&pwd="+ myp);
+          var url = 'https://www.google.co.in';
+          window.open(url, '_blank');*/
+          id=id+1;
+        }
+      </script>
+
+      <script>
+      $(document).ready(function(){
+        $('.ripple-effect').rkmd_rippleEffect();
+      });
+      (function($)
+      {
+        $.fn.rkmd_rippleEffect = function() {
+          var btn, self, ripple, size, rippleX, rippleY, eWidth, eHeight;
+          btn = $(this).not('[disabled], .disabled');
+          btn.on('mousedown', function(e) {
+            self = $(this);
+            if(e.button === 2)
+            {
+              return false;
+            }
+            if(self.find('.ripple').length === 0)
+            {
+              self.prepend('<span class="ripple"></span>');
+            }
+            ripple = self.find('.ripple');
+            ripple.removeClass('animated');
+            eWidth = self.outerWidth();
+            eHeight = self.outerHeight();
+            size = Math.max(eWidth, eHeight);
+            ripple.css({'width': size, 'height': size});
+            rippleX = parseInt(e.pageX - self.offset().left) - (size / 2);
+            rippleY = parseInt(e.pageY - self.offset().top) - (size / 2);
+            ripple.css({ 'top': rippleY +'px', 'left': rippleX +'px' }).addClass('animated');
+            setTimeout(function()
+            {
+              ripple.remove();
+            }, 800);
+          });
+        };
+      }(jQuery));
+</script>
+  </head>
+  
+  <body onload="startbasic()">
+    <div id="main_chat">
+      <center>
+        <div id="chatbtndisp">
+        <button class="ripple-effect qbtn col-lg-3" onclick="addmsg1()" id="b1">Electricity Consumption for Current Month</button>
+        <button class="ripple-effect qbtn col-lg-3" onclick="addmsg2()" id="b2">Tentative Cost for the next Month</button>
+        <button class="ripple-effect qbtn col-lg-3" onclick="addmsg3()" id="b3">Electricity Cost for Current Month</button>
+      </div>
+    </center>
+      <div id="chat">
+        <!--<div class="row">
+            <div class="reqmsg">Req</div>
+        </div>
+        <div class="row">
+            <div class="resmsg">Res</div>
+        </div>-->
+
+      </div>
+
+      <div id="msg">
+          <div id="msg_input">
+            <input type="text" id="mainmsg" name="input"></input>
+          </div>
+        <div id="btn_send">
+          <button id="sendmsgbtn" type="submit" class="rkmd-btn btn-deepPurple ripple-effect" onclick="sendmsg()">Send</button>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
